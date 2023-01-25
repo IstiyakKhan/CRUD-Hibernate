@@ -11,6 +11,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="PATH_TO_GIT" value="C:\Program Files (x86)\GitHubDesktop\GitHubDesktop.exe" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="JpbToolWindowState">
@@ -85,7 +86,7 @@
       <updated>1674574600494</updated>
       <workItem from="1674574601197" duration="6200000" />
       <workItem from="1674634720170" duration="179000" />
-      <workItem from="1674639864417" duration="5353000" />
+      <workItem from="1674639864417" duration="7143000" />
     </task>
     <servers />
   </component>
@@ -114,5 +115,8 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="LAST_COMMIT_MESSAGE" value="" />
   </component>
 </project>
