@@ -10,9 +10,9 @@
 <html>
 <head>
     <title>Table Data</title>
-    <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/indexstyle.css">
+    <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/home.css">
 </head>
-<body>
+<body style="background-color:aliceblue">
 
         <h1 style="text-align: center; margin-top: 50px;position:relative;right:6px;font-family:'Trebuchet MS', sans-serif";>Data Table</h1>
 

@@ -1,0 +1,82 @@
+
+table, td, th {
+    border: 1px solid #58665a;
+    /*border-radius: 4px;*/
+    text-align: left;
+    font-size: 18px;
+    font-family:'Trebuchet MS', sans-serif;
+    margin-left: auto;
+    margin-right: auto;
+}
+/*tr:nth-child(odd){background-color: #f2f2f2;}*/
+
+tr:hover {background-color: #cde7ff;}
+
+th{
+    background-color: #c8eaff;
+    font-size :  20px;
+    color: #0d451c;
+}
+tr{
+    background-color: #e8f3ff;
+    color: #093014;
+}
+
+table {
+    border-collapse: collapse;
+    width: 50%;
+}
+
+th, td {
+    padding: 15px;
+}
+
+table{
+    position: relative;
+    z-index: 1;
+    background: #e6f3ff;
+    overflow-y:auto;
+    height: 75%;
+    width: 60%;
+    display: block;
+    /*max-width: 50%;*/
+    margin: 0 auto 100px;
+    padding: 45px;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+h1{
+    color: #093014;
+}
+
+input[type=button]{
+    background-color: #158df7;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+input[type=button]:hover{
+    background-color: #1a6add;
+}
+a:link, a:visited {
+    background-color:#1a6add;
+    color: white;
+    padding: 14px 25px;
+    margin-bottom: -15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 4px;
+    margin-bottom: 1px;
+
+}
+a:hover, a:active {
+    background-color: #0b408c;
+}

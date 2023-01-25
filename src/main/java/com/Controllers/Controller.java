@@ -71,21 +71,13 @@ public class Controller {
     public String validate(@RequestParam("uname") String uname, @RequestParam("pass") String pass, ServletRequest req, ServletResponse resp){
 
         boolean isPresent = service.Validator(uname,pass);
+        req.setAttribute("isPresent",isPresent);
 
         if(isPresent == true){
             return "redirect:/list";
         }
         else {
-            try {
-                RequestDispatcher rd = req.getRequestDispatcher("/resources/view/index.jsp");
-                PrintWriter pr = resp.getWriter();
-                pr.print("<html><head><body><h2 style = color:#de5b52;position:relative;top:100px;left:40%>Invalid Username or Password</h2></body></head></html>");
-                rd.include(req,resp);
-            } catch (Exception e) {
-                throw new RuntimeException(e);
-            }
-
-            return null;
+            return "index";
         }
     }
 
@@ -108,31 +100,18 @@ public class Controller {
             service.addCustomer(customer);
             duplicateUsername = service.register(uname,pass);
        }
-
-        RequestDispatcher rd = req.getRequestDispatcher("/resources/view/registeration.jsp");
+        req.setAttribute("duplicateUsername",duplicateUsername);
+        req.setAttribute("emptyField",emptyField);
 
         if(duplicateUsername){
-            try {
-                PrintWriter pr = resp.getWriter();
-                pr.print("<html><head><body><h2 style = color:#de5b52;position:relative;top:100px;left:43%>Duplicate Username</h2></body></head></html>");
-                rd.include(req,resp);
-            } catch (Exception e) {
-                throw new RuntimeException(e);
-            }
+            return "registeration";
         }
         else if(emptyField){
-            try {
-                PrintWriter pr = resp.getWriter();
-                pr.print("<html><head><body><h2 style = color:#de5b52;position:relative;top:100px;left:41%>Please Enter in All Fields</h2></body></head></html>");
-                rd.include(req,resp);
-            } catch (Exception e) {
-                throw new RuntimeException(e);
-            }
+            return "registeration";
         }
         else {
             return "redirect:Reg2Log";
         }
-        return null;
     }
 
     @GetMapping("/Reg2Log")
