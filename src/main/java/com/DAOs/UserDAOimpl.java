@@ -12,9 +12,14 @@ import java.util.List;
 @Repository
 public class UserDAOimpl implements UserDAO {
 
-    @Autowired
     private SessionFactory sessionFactory;
 
+
+
+    @Autowired
+    public UserDAOimpl(SessionFactory sessionFactory){
+        this.sessionFactory = sessionFactory;
+    }
 
     public List<User> getCustomer() {
         Session session = sessionFactory.getCurrentSession();

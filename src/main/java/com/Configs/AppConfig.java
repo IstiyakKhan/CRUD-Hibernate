@@ -2,6 +2,8 @@ package com.Configs;
 
 import com.DAOs.UserDAO;
 import com.DAOs.UserDAOimpl;
+import com.DAOs.UserDataDAO;
+import com.DAOs.UserDataDAOimpl;
 import com.Services.Service;
 import com.Services.ServiceImpli;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -70,13 +72,17 @@ public class AppConfig {
 
     @Bean
     public UserDAO customerDao(){
-        return new UserDAOimpl();
+        return new UserDAOimpl(sessionFactory().getObject());
+        }
+
+        @Bean
+        public UserDataDAO userDataDAO(){
+        return new UserDataDAOimpl(sessionFactory().getObject());
         }
 
 
     @Bean
     public Service service(){
-        return new ServiceImpli();
+        return new ServiceImpli(customerDao(),userDataDAO());
     }
-
     }

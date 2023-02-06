@@ -12,8 +12,13 @@ import java.util.List;
 @Repository
 public class UserDataDAOimpl implements UserDataDAO {
 
-    @Autowired
+
     private SessionFactory sessionFactory;
+
+    @Autowired
+    public UserDataDAOimpl(SessionFactory sessionFactory){
+        this.sessionFactory = sessionFactory;
+    }
 
     public boolean validate(String uname, String pass) {
 

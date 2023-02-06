@@ -11,10 +11,15 @@ import java.util.List;
 @org.springframework.stereotype.Service
 public class ServiceImpli implements Service{
 
-    @Autowired
+
     private UserDAO customerDao;
 
     @Autowired
+    public ServiceImpli(UserDAO customerDao, UserDataDAO customerCredDAO){
+        this.customerCredDAO = customerCredDAO;
+        this.customerDao = customerDao;
+    }
+
     private UserDataDAO customerCredDAO;
 
     @Transactional
