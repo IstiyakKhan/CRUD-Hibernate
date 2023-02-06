@@ -1,8 +1,8 @@
 package com.Services;
 
-import com.DAOs.CustomerCredDAO;
-import com.DAOs.CustomerDAO;
-import com.Entities.Customer;
+import com.DAOs.UserDataDAO;
+import com.DAOs.UserDAO;
+import com.Entities.User;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.transaction.Transactional;
@@ -12,23 +12,23 @@ import java.util.List;
 public class ServiceImpli implements Service{
 
     @Autowired
-    private CustomerDAO customerDao;
+    private UserDAO customerDao;
 
     @Autowired
-    private CustomerCredDAO customerCredDAO;
+    private UserDataDAO customerCredDAO;
 
     @Transactional
-    public List<Customer> getCustomer() {
+    public List<User> getCustomer() {
         return customerDao.getCustomer();
     }
 
     @Transactional
-    public void addCustomer(Customer theCustomer) {
+    public void addCustomer(User theCustomer) {
         customerDao.addCustomer(theCustomer);
     }
 
     @Transactional
-    public Customer getCustomer(int id) {
+    public User getCustomer(int id) {
         return customerDao.getCustomer(id);
     }
 

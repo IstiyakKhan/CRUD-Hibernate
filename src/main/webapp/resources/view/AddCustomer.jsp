@@ -1,5 +1,5 @@
 <%@ page import="java.util.List" %>
-<%@ page import="com.Entities.Customer" %><%--
+<%@ page import="com.Entities.User" %><%--
   Created by IntelliJ IDEA.
   User: istiy
   Date: 17-01-2023
@@ -62,4 +62,5 @@
     </div>
 </section>
 </body>
+
 </html>

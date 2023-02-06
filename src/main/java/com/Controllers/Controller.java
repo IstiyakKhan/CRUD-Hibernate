@@ -1,6 +1,6 @@
 package com.Controllers;
 
-import com.Entities.Customer;
+import com.Entities.User;
 import com.Services.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
@@ -10,22 +10,23 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
-import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.List;
 
 @org.springframework.stereotype.Controller
 public class Controller {
 
-    @Autowired
     private Service service;
+
+    @Autowired
+    public Controller(Service service){
+        this.service = service;
+    }
     @GetMapping("/list")
     public ModelAndView check(Model theModel){
 
-        List<Customer> customerList = service.getCustomer();
+        List<User> customerList = service.getCustomer();
         theModel.addAttribute("customerList",customerList);
 
         return new ModelAndView("home");
@@ -34,7 +35,7 @@ public class Controller {
     @GetMapping("/redirectJsp")
     public ModelAndView redirect(Model theModel){
 
-        Customer customer = new Customer();
+        User customer = new User();
 
         theModel.addAttribute("customer",customer);
 
@@ -45,7 +46,7 @@ public class Controller {
     public ModelAndView update(@RequestParam("customerId") int id, Model theModel){
 
 
-         Customer customer = service.getCustomer(id);
+         User customer = service.getCustomer(id);
 
          theModel.addAttribute("customer",customer);
 
@@ -54,7 +55,7 @@ public class Controller {
 
 
     @PostMapping("/adding")
-    public String adding(@ModelAttribute("customer") Customer theCustomer){
+    public String adding(@ModelAttribute("customer") User theCustomer){
 
        service.addCustomer(theCustomer);
         return "redirect:/list";
@@ -91,14 +92,14 @@ public class Controller {
                            @RequestParam("email") String email, @RequestParam("pass") String pass,
                            @RequestParam("uname") String uname, ServletRequest req, ServletResponse resp){
 
-        boolean duplicateUsername = false;
+//        boolean duplicateUsername = false;
         boolean emptyField = true;
+        boolean duplicateUsername = service.register(uname,pass);
 
-        if(firstName.length() != 0 && lastName.length() != 0 && email.length() != 0){
+        if(firstName.length() != 0 && lastName.length() != 0 && email.length() != 0 && duplicateUsername == false){
             emptyField = false;
-            Customer customer = new Customer(firstName,lastName,email);
+            User customer = new User(firstName,lastName,email);
             service.addCustomer(customer);
-            duplicateUsername = service.register(uname,pass);
        }
         req.setAttribute("duplicateUsername",duplicateUsername);
         req.setAttribute("emptyField",emptyField);

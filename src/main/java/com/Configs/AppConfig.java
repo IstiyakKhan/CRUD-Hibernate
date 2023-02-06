@@ -1,7 +1,7 @@
 package com.Configs;
 
-import com.DAOs.CustomerDAO;
-import com.DAOs.CustomerDAOimpl;
+import com.DAOs.UserDAO;
+import com.DAOs.UserDAOimpl;
 import com.Services.Service;
 import com.Services.ServiceImpli;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,6 +53,7 @@ public class AppConfig {
         Properties properties = new Properties();
         properties.setProperty("hibernate.dialect",env.getRequiredProperty("hibernate.dialect"));
         properties.setProperty("hibernate.show_sql", env.getRequiredProperty("hibernate.show_sql"));
+        properties.setProperty("hibernate.format_sql", env.getRequiredProperty("hibernate.format_sql"));
         properties.setProperty("hibernate.hdm2ddl.auto", env.getRequiredProperty("hibernate.hdm2ddl.auto"));
 
         return properties;
@@ -68,8 +69,8 @@ public class AppConfig {
     }
 
     @Bean
-    public CustomerDAO customerDao(){
-        return new CustomerDAOimpl();
+    public UserDAO customerDao(){
+        return new UserDAOimpl();
         }
 
 

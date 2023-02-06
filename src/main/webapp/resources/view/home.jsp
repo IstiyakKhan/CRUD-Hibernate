@@ -16,6 +16,7 @@
 
         <h1 style="text-align: center; margin-top: 50px;position:relative;right:6px;font-family:'Trebuchet MS', sans-serif";>Data Table</h1>
 
+
 </div>
 
         <input type="button" value="Add New Entry" style=position:relative;left:300px;top:0px onclick="window.location.href='redirectJsp'; return false ;" class="button" >

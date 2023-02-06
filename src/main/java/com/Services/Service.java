@@ -1,17 +1,17 @@
 package com.Services;
 
-import com.Entities.Customer;
+import com.Entities.User;
 
 import java.util.List;
 
 
 public interface Service {
 
-    public List<Customer> getCustomer();
+    public List<User> getCustomer();
 
-    public void addCustomer(Customer theCustomer);
+    public void addCustomer(User theCustomer);
 
-    public Customer getCustomer(int id);
+    public User getCustomer(int id);
 
     public void deleteCustomer(int id);
 

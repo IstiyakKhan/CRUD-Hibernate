@@ -10,6 +10,9 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Merge.Settings">
+    <option name="BRANCH" value="main" />
+  </component>
   <component name="Git.Settings">
     <option name="PATH_TO_GIT" value="C:\Program Files (x86)\GitHubDesktop\GitHubDesktop.exe" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -86,7 +89,15 @@
       <updated>1674574600494</updated>
       <workItem from="1674574601197" duration="6200000" />
       <workItem from="1674634720170" duration="179000" />
-      <workItem from="1674639864417" duration="7143000" />
+      <workItem from="1674639864417" duration="7242000" />
+      <workItem from="1674651161480" duration="329000" />
+      <workItem from="1674739154417" duration="1909000" />
+      <workItem from="1674860690402" duration="357000" />
+      <workItem from="1674871363630" duration="30000" />
+      <workItem from="1675155070280" duration="73000" />
+      <workItem from="1675544836417" duration="1103000" />
+      <workItem from="1675551759944" duration="623000" />
+      <workItem from="1675710189762" duration="346000" />
     </task>
     <servers />
   </component>

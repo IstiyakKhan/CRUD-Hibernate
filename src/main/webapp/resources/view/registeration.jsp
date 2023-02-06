@@ -23,10 +23,11 @@
             </div>
             <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
                 <c:if test="${duplicateUsername}">
-                    <h4 style="text-align: center; color: red;font-weight: bold" class="pb-5">Duplicate Username</h4>
+                    <h4 style="text-align: center; color: red;font-weight: bold" class="pb-3">Duplicate Username</h4>
                 </c:if>
                 <c:if test="${emptyField}">
-                    <h4 style="text-align: center; color: red;font-weight: bold" class="pb-5">Empty Fields</h4>
+                    <h4 style="text-align: center; color: red;font-weight: bold" class="pb-3">Empty Fields</h4>
+                    ${emptyField} = true
                 </c:if>
                 <form action="register" method="post">
                     <div class="row">
